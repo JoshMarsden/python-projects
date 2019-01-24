@@ -21,6 +21,8 @@ distractions are inevitable. I know, it's a small thing, but to me it makes a
 huge difference. Also, it's nice to have a simple project like this by which I 
 can hone my electronics and programming skills.
 
+[^ back to top]
+
 ## Materials Necessary
 
 * Raspberry Pi 2 or 3 _($35 new)_
