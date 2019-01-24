@@ -14,6 +14,7 @@ can hone my electronics and programming skills.
 ## Materials Necessary
 
 * Raspberry Pi 2 or 3 _($35 new)_
+* 16GB SD card _(~$25 for pack of 5)_
 * 4-digit 7-segment anode module SH5461AS _(~$2)_
 * 12 jumper wires (male to female) _(common in kits)_
 * 8 resistors (220 or 100 ohms) _(common in kits)_
