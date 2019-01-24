@@ -142,7 +142,7 @@ other second (another fun math trick). Now you see why I put that dp argument in
 ```
 
 
-**The __main__ show**  
+**The \_\_main\_\_ show**  
 After abstracting the heavy work out to the above two functions, all that was left
 was to ask nicely for the current time (which is accurate as can be), extract the
 hours, minutes, and seconds values from the time tuple, and call the 
