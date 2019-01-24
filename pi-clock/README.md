@@ -43,6 +43,7 @@ top (a) | 11 | Yes | 8
 DIGIT 1 | 12 | No | 15
 
 **7-segment display pinout**
+
 ![7-segment display pinout drawing](https://github.com/JoshMarsden/python-projects/blob/master/PiClock/photos/7-segment-pinout-drawing.jpg)
 
 
