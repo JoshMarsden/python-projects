@@ -26,6 +26,7 @@ can hone my electronics and programming skills.
 ![Fritzing wiring diagram screenshot](https://github.com/JoshMarsden/python-projects/blob/master/PiClock/photos/fritzing-screenshot.png)
 
 **Pin Connection Table**
+
 Segment/Digit | 7-seg pin | resistor? | GPIO# (BCM)
 ------------- | --------- | --------- | -----------
 top (a) | 11 | Yes | 8
