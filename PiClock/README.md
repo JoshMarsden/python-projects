@@ -1,6 +1,8 @@
 The Pi Clock
 ---
 
+![Pi Clock Front Picture] (https://github.com/JoshMarsden/python-projects/blob/master/PiClock/photos/pi-clock-front.jpg)
+
 ## Inspiration
 
 It has occurred to me that a clock in my room is a must-have. So much time can be 
