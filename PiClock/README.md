@@ -23,7 +23,7 @@ can hone my electronics and programming skills.
 
 ## Wiring
 
-> Picture of Fritzing diagram will go here
+![Fritzing wiring diagram screenshot](https://github.com/JoshMarsden/python-projects/blob/master/PiClock/photos/fritzing-screenshot.png)
 
 > Table of pin connections (maybe RasPi pinout table)
 
