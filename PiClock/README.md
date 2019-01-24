@@ -1,7 +1,7 @@
 The Pi Clock
 ---
 
-![Pi Clock Front Picture] (https://github.com/JoshMarsden/python-projects/blob/master/PiClock/photos/pi-clock-front.jpg)
+![Pi Clock Front Picture](https://github.com/JoshMarsden/python-projects/blob/master/PiClock/photos/pi-clock-front.jpg)
 
 ## Inspiration
 
