@@ -29,8 +29,7 @@ can hone my electronics and programming skills.
 > **Note:** While the code for this project is in Python 2.7, it will still work 
 > in Python 3.X.
 
-**show_num function**
-
+**show_num function**  
 This function takes an integer argument `digit` for selecting one of the four 7-
 segment displays to control. Following is a string argument `num` for selecting
 a code string from a dictionary called `numcode`. The third argument `dp` is used
@@ -60,10 +59,10 @@ signal to the correct LED segment.
                '9': 'abcdfg'}
 ```
 
-**Lines 51-65**
-This is where the chosen numcode string comes into play. The first if-else block
-turns a segment on only if it is in the code string. The second if-else block is
-what controls whether the dot point LED is turned on or not.
+**Lines 51-64**
+This is where the chosen numcode string comes into play. The if-else block turns 
+a segment on only if it is in the code string. The next line is what controls 
+whether the dot point LED is turned on or not.
 
 The last three lines turn the selected digit on (0 because of the anode thing), 
 wait a millisecond, and quickly deselect the digit.
@@ -76,10 +75,7 @@ wait a millisecond, and quickly deselect the digit.
         else:
             GPIO.output(segments[seg], 0)
 
-        if dp:
-            GPIO.output(segments['dp'], 1)
-        else:
-            GPIO.output(segments['dp'], 0)
+        GPIO.output(segments['dp'], dp)
 
     GPIO.output(dselect[digit], 0)
     time.sleep(0.001)
@@ -87,8 +83,7 @@ wait a millisecond, and quickly deselect the digit.
 ```
 
 
-**display_time function**
-
+**display_time function**  
 This function _"prints"_ the hour and minute values on the 7-segment display 
 module. The hour is expected to be in 24-hour time format, but does not break the 
 logic if it is not. The second is simply used to _"animate"_ the dot point between
@@ -99,7 +94,7 @@ one wishes to put a button in the assembly later to control output format.
 def display_time(hh, mm, ss, mode=12):
 ```
 
-**Line 73**
+**Line 72**
 This is a one-liner to set the very last dot point to mark PM for evening times. A
 ternary expression is used here to turn the PM marker off if in the 24-hour 
 format. I prefer to use mathematical expressions of what is desired instead of 
@@ -110,7 +105,7 @@ solutions.
     pm = hh // 12 if mode == 12 else 0
 ```
 
-**Lines 76-78**
+**Lines 75-77**
 Starting with a conditional mode option, this block is another simple mathematical
 solution to a complex problem. I wanted a quick way to convert a 0-23 hour scale
 to a 1-12 scale. This can either be accomplished via various if-else blocks in 
@@ -125,7 +120,7 @@ that 12 will only be added if the hour value is exactly equal to 0.
         hh = ((12 - hh) // 12) * 12 + hh
 ```
 
-**Lines 80-86**
+**Lines 79-85**
 After all the 12-hour conversion stuff was finished, it was time to pad any single
 digit values with zeroes (in the case of the hour value, with spaces). I decided
 to leave the final values as strings because I could easily iterate through each
@@ -147,8 +142,7 @@ other second (another fun math trick). Now you see why I put that dp argument in
 ```
 
 
-**The __main__ show**
-
+**The __main__ show**  
 After abstracting the heavy work out to the above two functions, all that was left
 was to ask nicely for the current time (which is accurate as can be), extract the
 hours, minutes, and seconds values from the time tuple, and call the 
@@ -159,8 +153,8 @@ other animation programming projects that .01 seconds is the perfect amount.
 At the very end, I use the `finally` block to reset the GPIO pin modes and hand
 control of the pins cleanly over the OS after the program terminates.
 
-> **Note:** The while loop is here for simplicity. A better version can be created
-> that does not keep polling the OS for the correct time 100 times a second.
+> **Note:** A better version can be created that does not keep polling the OS for 
+> the current time 100 times a second.
 
 ```python
 if __name__ == "__main__":

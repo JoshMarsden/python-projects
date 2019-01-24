@@ -53,10 +53,9 @@ def show_num(digit, num, dp=False):
             GPIO.output(segments[seg], 1)
         else:
             GPIO.output(segments[seg], 0)
-        if dp:
-            GPIO.output(segments['dp'], 1)
-        else:
-            GPIO.output(segments['dp'], 0)
+
+        GPIO.output(segments['dp'], dp)
+
     # Remember, digit selection is anode (opposite)
     GPIO.output(dselect[digit], 0)
     # Give the 7-seg a moment to breathe
