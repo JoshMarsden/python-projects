@@ -76,7 +76,34 @@ to work with to affect the GPIO pins and observe the results. Science!
 
 Having the Pi Clock is great, but how does one keep it running and then leave the
 terminal? The simplest version is to run the python process in the background, 
-then detaching the process from your current SSH session.
+then detach the process from your current SSH session.
+
+Run the program with python:
+
+```bash
+$ python pi-clock.py
+```
+
+Pause the current process (the running python program) with ctrl-z (^z) and 
+background it with the `bg` command:
+
+```bash
+^Z
+[1]+	Stopped			python pi-clock.py
+$ bg
+[1]+ python pi-clock.py &
+$
+```
+
+This gives you the command prompt back, but if you log off from the SSH session, 
+the program will stop running. To fix that, you need to `disown` the python 
+process from the SSH session.
+
+```bash
+$ disown
+```
+
+You should be good to go now. You can log off and let the Pi run in peace.
 
 
 ## Code Commentary
