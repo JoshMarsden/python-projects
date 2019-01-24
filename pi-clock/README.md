@@ -7,6 +7,9 @@ The Pi Clock
 
 * [Materials Necessary](#materials-necessary)
 * [Wiring](#wiring)
+    - [Pin Connection Table](#pin-connection-table)
+    - [7-segment display pinout](#7-segment-display-pinout)
+    - [Pro tip - gpio readall](pro-tip-\--gpio-readall)
 * [Running Headless](#running-headless)
 * [Code Commentary](#code-commentary)
 
@@ -53,7 +56,7 @@ DIGIT 1 | 12 | No | 15
 
 ![7-segment display pinout drawing](https://github.com/JoshMarsden/python-projects/blob/master/pi-clock/photos/7-segment-pinout-drawing.jpg)
 
-### Pro Tip: Listing the GPIO pin table from the command line
+### Pro tip - gpio readall
 
 The best thing about the Raspberry Pi is the direct control you have over its
 GPIO system. Ever wonder what pins are labeled what? I picked up this trick from
