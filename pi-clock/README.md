@@ -61,7 +61,7 @@ a blog somewhere online. Type `$ gpio readall` from the command line. This will
 you a very straightforward, clear table of the pin layout your Raspbery Pi is 
 using. Here's an example from the Pi 2b that I am using for this project:
 
-[Pi 2b GPIO command line pinout](https://github.com/JoshMarsden/python-projects/blob/master/pi-clock/photos/gpio-readall-screenshot.png)
+![Pi 2b GPIO command line pinout](https://github.com/JoshMarsden/python-projects/blob/master/pi-clock/photos/gpio-readall-screenshot.png)
 
 You'll notice that I have requested the pinout from the Pi as my program is 
 running. This is a great way to debug your hardward projects on the fly. Not only
