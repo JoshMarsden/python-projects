@@ -9,7 +9,7 @@ The Pi Clock
 * [Wiring](#wiring)
     - [Pin Connection Table](#pin-connection-table)
     - [7-segment display pinout](#7-segment-display-pinout)
-    - [Pro tip - gpio readall](pro-tip-gpio-readall)
+    - [Pro tip - gpio readall](#pro-tip---gpio-readall)
 * [Running Headless](#running-headless)
 * [Code Commentary](#code-commentary)
 
