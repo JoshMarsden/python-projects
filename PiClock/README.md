@@ -29,18 +29,18 @@ can hone my electronics and programming skills.
 
 Segment/Digit | 7-seg pin | resistor? | GPIO# (BCM)
 ------------- | --------- | --------- | -----------
-top (a) | 11 | Yes | 8
-top right (b) | 7 | Yes | 10
-bot right (c) | 4 | Yes | 23
-bottom (d) | 2 | Yes | 27
 bot left (e) | 1 | Yes | 17
-top left (f) | 10 | Yes | 25
-middle (g) | 5 | Yes | 24
+bottom (d) | 2 | Yes | 27
 dot (dp) | 3 | Yes | 22
-DIGIT 1 | 12 | No | 15
-DIGIT 2 | 9 | No | 3
-DIGIT 3 | 8 | No | 2
+bot right (c) | 4 | Yes | 23
+middle (g) | 5 | Yes | 24
 DIGIT 4 | 6 | No | 14
+top right (b) | 7 | Yes | 10
+DIGIT 3 | 8 | No | 2
+DIGIT 2 | 9 | No | 3
+top left (f) | 10 | Yes | 25
+top (a) | 11 | Yes | 8
+DIGIT 1 | 12 | No | 15
 
 
 ## Code Commentary
