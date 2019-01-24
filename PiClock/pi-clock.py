@@ -12,41 +12,41 @@ import time             # For display timing
 GPIO.setmode(GPIO.BCM)  # Not to be confused with the WPi numbering system
 GPIO.setwarnings(False) # Because it gets annoying
 
-# GPIO ports mapped to 7-seg segment names
-segments = {'a':8, 'b':10, 'c':23, 'd':27, 'e':17, 'f':25, 'g':24, 'dp':22}
-
-# Each code corresponds to a sequence of characters referencable in the segments
-# dictionary.
-numcode = {' ': '',
-           '0': 'abcdef',
-           '1': 'bc',
-           '2': 'abdeg',
-           '3': 'abcdg',
-           '4': 'bcfg',
-           '5': 'acdfg',
-           '6': 'acdefg',
-           '7': 'abc',
-           '8': 'abcdefg',
-           '9': 'abcdfg'}
-
-# GPIO ports for digit selection
-# In order: 1, 2, 3, 4
-dselect = (15, 3, 2, 14)
-
-# Set GPIO pin modes to OUT
-for segment in segments:
-    GPIO.setup(segments[segment], GPIO.OUT)
-    GPIO.output(segments[segment], 0)
-for digit in dselect:
-    GPIO.setup(digit, GPIO.OUT)
-    GPIO.output(digit, 1)
-
 
 def show_num(digit, num, dp=False):
     """
         Given a digit place and integer to represent, send the necessary signals
         to the correct 7-segment display.
     """
+    # GPIO ports mapped to 7-seg segment names
+    segments = {'a':8, 'b':10, 'c':23, 'd':27, 'e':17, 'f':25, 'g':24, 'dp':22}
+
+    # Each code corresponds to a sequence of characters referencable in the segments
+    # dictionary.
+    numcode = {' ': '',
+               '0': 'abcdef',
+               '1': 'bc',
+               '2': 'abdeg',
+               '3': 'abcdg',
+               '4': 'bcfg',
+               '5': 'acdfg',
+               '6': 'acdefg',
+               '7': 'abc',
+               '8': 'abcdefg',
+               '9': 'abcdfg'}
+
+    # GPIO ports for digit selection
+    # In order: 1, 2, 3, 4
+    dselect = (15, 3, 2, 14)
+
+    # Set GPIO pin modes to OUT
+    for segment in segments:
+        GPIO.setup(segments[segment], GPIO.OUT)
+        GPIO.output(segments[segment], 0)
+    for digit in dselect:
+        GPIO.setup(digit, GPIO.OUT)
+        GPIO.output(digit, 1)
+
     for seg in segments:
         if seg in numcode[num]:
             GPIO.output(segments[seg], 1)
