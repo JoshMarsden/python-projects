@@ -25,7 +25,22 @@ can hone my electronics and programming skills.
 
 ![Fritzing wiring diagram screenshot](https://github.com/JoshMarsden/python-projects/blob/master/PiClock/photos/fritzing-screenshot.png)
 
-> Table of pin connections (maybe RasPi pinout table)
+**Pin Connection Table**
+Segment/Digit | 7-seg pin | resistor? | GPIO# (BCM)
+------------- | --------- | --------- | -----------
+top (a) | 11 | Yes | 8
+top right (b) | 7 | Yes | 10
+bot right (c) | 4 | Yes | 23
+bottom (d) | 2 | Yes | 27
+bot left (e) | 1 | Yes | 17
+top left (f) | 10 | Yes | 25
+middle (g) | 5 | Yes | 24
+dot (dp) | 3 | Yes | 22
+DIGIT 1 | 12 | No | 15
+DIGIT 2 | 9 | No | 3
+DIGIT 3 | 8 | No | 2
+DIGIT 4 | 6 | No | 14
+
 
 ## Code Commentary
 
