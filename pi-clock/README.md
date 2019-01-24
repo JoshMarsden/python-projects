@@ -1,7 +1,7 @@
 The Pi Clock
 ---
 
-![Pi Clock Front Picture](https://github.com/JoshMarsden/python-projects/blob/master/PiClock/photos/pi-clock-front.jpg)
+![Pi Clock Front Picture](https://github.com/JoshMarsden/python-projects/blob/master/pi-clock/photos/pi-clock-front.jpg)
 
 ## Inspiration
 
@@ -23,7 +23,7 @@ can hone my electronics and programming skills.
 
 ## Wiring
 
-![Fritzing wiring diagram screenshot](https://github.com/JoshMarsden/python-projects/blob/master/PiClock/photos/fritzing-screenshot.png)
+![Fritzing wiring diagram screenshot](https://github.com/JoshMarsden/python-projects/blob/master/pi-clock/photos/fritzing-screenshot.png)
 
 **Pin Connection Table**
 
@@ -44,7 +44,7 @@ DIGIT 1 | 12 | No | 15
 
 **7-segment display pinout**
 
-![7-segment display pinout drawing](https://github.com/JoshMarsden/python-projects/blob/master/PiClock/photos/7-segment-pinout-drawing.jpg)
+![7-segment display pinout drawing](https://github.com/JoshMarsden/python-projects/blob/master/pi-clock/photos/7-segment-pinout-drawing.jpg)
 
 
 ## Code Commentary
