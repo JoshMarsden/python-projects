@@ -3,6 +3,13 @@ The Pi Clock
 
 ![Pi Clock Front Picture](https://github.com/JoshMarsden/python-projects/blob/master/pi-clock/photos/pi-clock-front.jpg)
 
+## Contents
+
+* [Materials Necessary](#materials-necessary)
+* [Wiring](#wiring)
+* [Running Headless](#running-headless)
+* [Code Commentary](#code-commentary)
+
 ## Inspiration
 
 It has occurred to me that a clock in my room is a must-have. So much time can be 
@@ -25,7 +32,7 @@ can hone my electronics and programming skills.
 
 ![Fritzing wiring diagram screenshot](https://github.com/JoshMarsden/python-projects/blob/master/pi-clock/photos/fritzing-screenshot.png)
 
-**Pin Connection Table**
+### Pin Connection Table
 
 Segment/Digit | 7-seg pin | resistor? | GPIO# (BCM)
 ------------- | --------- | --------- | -----------
@@ -42,9 +49,31 @@ top left (f) | 10 | Yes | 25
 top (a) | 11 | Yes | 8
 DIGIT 1 | 12 | No | 15
 
-**7-segment display pinout**
+### 7-segment display pinout
 
 ![7-segment display pinout drawing](https://github.com/JoshMarsden/python-projects/blob/master/pi-clock/photos/7-segment-pinout-drawing.jpg)
+
+### Pro Tip: Listing the GPIO pin table from the command line
+
+The best thing about the Raspberry Pi is the direct control you have over its
+GPIO system. Ever wonder what pins are labeled what? I picked up this trick from
+a blog somewhere online. Type `$ gpio readall` from the command line. This will 
+you a very straightforward, clear table of the pin layout your Raspbery Pi is 
+using. Here's an example from the Pi 2b that I am using for this project:
+
+~[Pi 2b GPIO command line pinout](https://github.com/JoshMarsden/python-projects/blob/master/pi-clock/photos/gpio-readall-screenshot.png)
+
+You'll notice that I have requested the pinout from the Pi as my program is 
+running. This is a great way to debug your hardward projects on the fly. Not only
+can you list this, but `gpio -h` and `gpio <command> -h` can give you more tools
+to work with to affect the GPIO pins and observe the results. Science!
+
+
+## Running Headless
+
+Having the Pi Clock is great, but how does one keep it running and then leave the
+terminal? The simplest version is to run the python process in the background, 
+then detaching the process from your current SSH session.
 
 
 ## Code Commentary
