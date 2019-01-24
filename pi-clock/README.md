@@ -21,7 +21,7 @@ distractions are inevitable. I know, it's a small thing, but to me it makes a
 huge difference. Also, it's nice to have a simple project like this by which I 
 can hone my electronics and programming skills.
 
-[^ back to top]
+[^ back to top](#the-pi-clock)
 
 ## Materials Necessary
 
@@ -36,6 +36,8 @@ can hone my electronics and programming skills.
 ## Wiring
 
 ![Fritzing wiring diagram screenshot](https://github.com/JoshMarsden/python-projects/blob/master/pi-clock/photos/fritzing-screenshot.png)
+
+[^ back to top](#the-pi-clock)
 
 ### Pin Connection Table
 
@@ -58,6 +60,8 @@ DIGIT 1 | 12 | No | 15
 
 ![7-segment display pinout drawing](https://github.com/JoshMarsden/python-projects/blob/master/pi-clock/photos/7-segment-pinout-drawing.jpg)
 
+[^ back to top](#the-pi-clock)
+
 ### Pro tip - gpio readall
 
 The best thing about the Raspberry Pi is the direct control you have over its
@@ -73,6 +77,8 @@ running. This is a great way to debug your hardward projects on the fly. Not onl
 can you list this, but `gpio -h` and `gpio <command> -h` can give you more tools
 to work with to affect the GPIO pins and observe the results. Science!
 
+
+[^ back to top](#the-pi-clock)
 
 ## Running Headless
 
@@ -107,6 +113,8 @@ $ disown
 
 You should be good to go now. You can log off and let the Pi run in peace.
 
+
+[^ back to top](#the-pi-clock)
 
 ## Code Commentary
 
@@ -251,3 +259,5 @@ if __name__ == "__main__":
         print("\ncleaning up.")
         GPIO.cleanup()
 ```
+
+[^ back to top](#the-pi-clock)
