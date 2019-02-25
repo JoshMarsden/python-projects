@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
 """
-author = "Joshua Marsden"
-email  = "%s%s@%s" % ("joshua", "marsden", "gmail.com")
+author = "Josh Marsden"
+email  = "%s%s@%s" % ("odd", "algorithm", "gmail.com")
 src    = "https://raspi.tv/2015/how-to-drive-a-7-segment-display-directly-on-raspberry-pi-in-python"
 """
 
