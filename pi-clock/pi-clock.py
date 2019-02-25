@@ -2,7 +2,6 @@
 
 """
 author = "Josh Marsden"
-email  = "%s%s@%s" % ("odd", "algorithm", "gmail.com")
 src    = "https://raspi.tv/2015/how-to-drive-a-7-segment-display-directly-on-raspberry-pi-in-python"
 """
 
