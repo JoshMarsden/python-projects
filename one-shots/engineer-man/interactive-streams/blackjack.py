@@ -1,19 +1,21 @@
 #!/usr/bin/env python
 
 """
+
 Author: Engineer Man 
   <github.com/engineer-man/youtube/blob/master/stream014/blackjack.py>
 
 Modified by: Josh Marsden
-  <github.com/JoshMarsden>
+  <github.com/OddAlgorithm>
 
 blackjack.py
 
-A console-based game application by which the user can play the well-known
-card game Blackjack. This version includes the ability to place fake bets
-that have no standing in the real world. Also, the dealers are humanized. I
-say **dealers** because there is also an API in use that returns randomly
+A console-based game application by which the user can play the well-known 
+card game Blackjack. This version includes the ability to place fake bets 
+that have no standing in the real world. Also, the dealers are humanized. 
+I say **dealers** because there is also an API in use that returns randomly 
 generated names.
+
 """
 
 import random           # for random.shuffle()
@@ -75,7 +77,7 @@ def calc_hand(hand):
     aces = [card for card in hand if card[0] == 'A']
 
     for card in non_aces:
-        if card[0] in 'JQKX':  # X stands for 10
+        if card[0] in 'JQK' or card[0:2] == '10':
             sum += 10
         else:
             sum += int(card[0])
@@ -177,7 +179,6 @@ def play_round(dealer_name, initial_bet, min_bet, max_bet):
 
     # Start with a fresh deck of 52 cards
     deck = [
-        # X = 10, one digit looks cleaner to me
         '2S','3S','4S','5S','6S','7S','8S','9S','10S','JS','QS','KS','AS',
         '2C','3C','4C','5C','6C','7C','8C','9C','10C','JC','QC','KC','AC',
         '2H','3H','4H','5H','6H','7H','8H','9H','10H','JH','QH','KH','AH',
