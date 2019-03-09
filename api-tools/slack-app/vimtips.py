@@ -6,7 +6,7 @@ import requests	 # for POST requests
 import time      # for schedule timing
 
 # Third party imports
-import schedule  # to replace dumb crontab
+import schedule  # to replace crontab on raspberry pi
 
 
 
@@ -76,13 +76,11 @@ def main():
         log_write('Exception: {}\nwhile trying to send string "{}"'.format(e, new_tip))
 
 
-# Replacement for the stupid crontab. Why no work???
+# Replacement for the crontab. Having problems on Raspberry Pi.
 schedule.every().day.at('15:00').do(main)
 
 
 if __name__ == "__main__":
-    #log_write('testing, testing\n', fname='test.log')
-    #main()
     while True:
         schedule.run_pending()
-        time.sleep(1)
+        time.sleep(60)
