@@ -8,9 +8,6 @@ import time      # for schedule timing
 # Third party imports
 import schedule  # to replace dumb crontab
 
-# Local imports
-import creds     # for webhook URL
-import linecount # to keep track of unprocessed lines
 
 
 def log_write(text, fname='logvimtips.log'):
@@ -23,6 +20,9 @@ def log_write(text, fname='logvimtips.log'):
 def slack_tip(tip):
     """Uses a pre-defined webhook to send a tip to the Slack channel."""
 
+    # Local import
+    import creds     # for webhook URL
+
     text = tip
     json_data = '{{"text": "{}"}}'.format(text)
     # Send the request
@@ -34,6 +34,9 @@ def slack_tip(tip):
 
 def read_line(filename='tips.txt'):
     """Returns next unprocessed line from input file."""
+
+    # Local import
+    import linecount # to keep track of unprocessed lines
 
     new_tip = ''
     temp_count = 0
@@ -56,7 +59,7 @@ def read_line(filename='tips.txt'):
 
     if temp_count == linecount.count:
         # If true, no new tips have been found, so quit
-        # In the future, send text to notify me to add more tips
+        # In the future, send text to notify owner to add more tips
         sys.exit(1)
 
     return new_tip
