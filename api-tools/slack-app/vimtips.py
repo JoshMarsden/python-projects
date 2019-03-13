@@ -8,6 +8,8 @@ import time      # for schedule timing
 # Third party imports
 import schedule  # to replace crontab on raspberry pi
 
+# Local import
+import creds     # for webhook URL
 
 
 def log_write(text, fname='logvimtips.log'):
@@ -19,9 +21,6 @@ def log_write(text, fname='logvimtips.log'):
 
 def slack_tip(tip):
     """Uses a pre-defined webhook to send a tip to the Slack channel."""
-
-    # Local import
-    import creds     # for webhook URL
 
     text = tip
     json_data = '{{"text": "{}"}}'.format(text)
@@ -35,8 +34,8 @@ def slack_tip(tip):
 def read_line(filename='tips.txt'):
     """Returns next unprocessed line from input file."""
 
-    # Local import
-    import linecount # to keep track of unprocessed lines
+    with open('linecount.txt', 'r') as linecount_file:
+        linecount = int(linecount_file.readline())
 
     new_tip = ''
     temp_count = 0
@@ -47,17 +46,17 @@ def read_line(filename='tips.txt'):
             try:
                 new_tip = line
                 # Break the loop when an unprocessed line is found
-                if temp_count > linecount.count:
-                    with open('linecount.py', 'w') as lcpy:
+                if temp_count > linecount:
+                    with open('linecount.txt', 'w') as lcpy:
                         # Update variable for next time
-                        lcpy.write('count = %s\n' % temp_count)
+                        lcpy.write('%s\n' % temp_count)
                     break
             except Exception as e:
                 # Log any errors for future reference
                 log_write('Exception: {}\nwhile trying to read line from file "{}"'.format(e, tip_file.name))
                 return ''
 
-    if temp_count == linecount.count:
+    if temp_count == linecount:
         # If true, no new tips have been found, so quit
         # In the future, send text to notify owner to add more tips
         sys.exit(1)
@@ -77,7 +76,7 @@ def main():
 
 
 # Replacement for the crontab. Having problems on Raspberry Pi.
-schedule.every().day.at('15:00').do(main)
+schedule.every().day.at('16:00').do(main)
 
 
 if __name__ == "__main__":
