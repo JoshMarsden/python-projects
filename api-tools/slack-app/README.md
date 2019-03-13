@@ -1,7 +1,6 @@
 # Daily VIM Tips
 
-A Slack app bot that posts a new tip or trick daily (07:00 PST) about using
-VIM.
+A Slack app bot that posts a new tip or trick daily about using VIM.
 
 ## How to make your own Slack app
 1. You have to be an admin or have the admin's permission to add an app to a
